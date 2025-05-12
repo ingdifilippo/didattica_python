@@ -1,8 +1,7 @@
 from math import pi
 
-r = int(input("Inserire il raggio del cerchio"))
+r = int(input("Inserire il raggio del cerchio: "))
 
-area = pi*r*r
+area_cerchio = pi*r*r
 
-print("L'area del cerchio di raggio", r, "risulta:", area_cerchio")
-
+print("L'area del cerchio di raggio", r, 
