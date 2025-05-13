@@ -1,38 +1,39 @@
 import pygame
 
-# Inizializza Pygame
+# Initialize game engine modules
 pygame.init()
 
-# Imposta le dimensioni della finestra
+# Set window dimensions
 larghezza = 600
 altezza = 600
-schermo = pygame.display.set_mode((larghezza, altezza))
 
-# Imposta il titolo della finestra
-pygame.display.set_caption("Disegna un Cerchio")
+surface = pygame.display.set_mode((larghezza, altezza))
 
-# Definisci i colori
-bianco = (255, 255, 255)
+# Set window title
+pygame.display.set_caption("Disegna un Cerchio sulla superficie creata")
+
+# set colors
 nero = (0, 0, 0)
+
 rosso = (255, 0, 0)  # Puoi scegliere il colore del cerchio
 
-# Definisci il raggio del cerchio
+# Definisci il raggio del cerchio in pixel
 raggio = 100
 
 # Calcola le coordinate del centro della finestra
 centro_x = larghezza // 2
 centro_y = altezza // 2
 
-# Loop principale del gioco
+# Main loop
 running = True
 while running:
-    # Gestisci gli eventi
+    # Manage window close call event
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    # Pulisci lo schermo
-    schermo.fill(bianco)
+    # clear screen
+    surface.fill(nero)
 
     # Disegna il cerchio
     # pygame.draw.circle(superficie, colore, (centro_x, centro_y), raggio, spessore=0)
@@ -41,7 +42,7 @@ while running:
     # - (centro_x, centro_y): le coordinate del centro del cerchio
     # - raggio: il raggio del cerchio
     # - spessore (opzionale): se omesso o 0, il cerchio è pieno. Un valore maggiore indica lo spessore del bordo.
-    pygame.draw.circle(schermo, rosso, (centro_x, centro_y), raggio)
+    pygame.draw.circle(surface, rosso, (centro_x, centro_y), raggio, 4)
 
     # Aggiorna lo schermo per mostrare il disegno
     pygame.display.flip()
