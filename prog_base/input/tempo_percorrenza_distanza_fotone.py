@@ -6,7 +6,7 @@ distanza_metri = float(input("Inserisci la distanza in metri da A a B: "))
 velocita_luce = 299792458  # metri al secondo
 tempo_percorrenza_secondi = distanza_metri / velocita_luce
 
-print("La luce impiega ", tempo_percorrenza_secondi, " secondi per raggiungere la Luna dalla Terra.")
+print("La luce impiega ", tempo_percorrenza_secondi, " secondi per andare da A a B.")
 
 #Conversione del tempo in minuti
 
