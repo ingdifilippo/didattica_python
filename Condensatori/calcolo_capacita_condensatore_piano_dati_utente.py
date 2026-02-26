@@ -1,4 +1,4 @@
-
+#Programma 1 - Calcolo della capacità del condensatore con dati utente
 # Costante dielettrica del vuoto (F/m)
 EPSILON_0 = 8.854e-12
 
