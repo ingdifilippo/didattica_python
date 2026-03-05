@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# --- Parametri del Circuito ---
+
+E = 12       # Tensione [V]
+R = 1000     # Resistenza [Ohm]
+C = 10e-6    # Capacità [F]
+
+tau = R * C  # Costante di tempo
+t_carica = 5 * tau  # Durata totale del transitorio
+
+#Come tracciare il grafico:
+
+punti_tempo = []
+punti_tensione = []
+
+for t in np.linspace(0, t_carica, 50):
+    v_c = E * (1 - np.exp(-t/tau))
+    punti_tempo.append(t)
+    punti_tensione.append(v_c)
+
+# Tracciamo i punti raccolti
+
+plt.plot(punti_tempo, punti_tensione, color='orange')
+
+plt.title('Carica Condensatore per punti')
+plt.xlabel('Tempo (s)')
+plt.ylabel('Tensione (V)')
+plt.grid(True)
+plt.show()
+
